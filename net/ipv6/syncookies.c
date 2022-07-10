@@ -288,7 +288,7 @@ struct sock *cookie_v6_check(struct sock *sk, struct sk_buff *skb)
 		req->rsk_window_clamp = full_space;
 
 #ifdef CONFIG_MPTCP
-	tp->ops->select_initial_window(sk, tcp_full_space(sk), req->mss,
+	tp->ops->select_initial_window(sk, full_space, req->mss,
 				       &req->rsk_rcv_wnd, &req->rsk_window_clamp,
 				       ireq->wscale_ok, &rcv_wscale,
 				       dst_metric(dst, RTAX_INITRWND));
